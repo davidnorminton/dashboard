@@ -5,7 +5,6 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import Header from './Components/Header';
 import Sidebar from './Components/Sidebar';
 // Pages
 import Home from './Pages/Home';
@@ -18,7 +17,6 @@ function App() {
     <div className="App">
 
       <MemoryRouter>
-        <Header />
         <Sidebar />
         <Routes>
           <Route path="/" element={<Home />}/> 

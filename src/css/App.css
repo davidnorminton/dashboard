@@ -1,40 +1,57 @@
+*:focus {
+  outline: none;
+}
+
 /** Body **/
 .App {
   min-height: 100vh;
   padding-left: 250px;
-  padding-top: 50px;
 }
 
-/** header **/
-.header {
+/** Search **/
+.web-search {
   display: flex;
-  flex-direction: column;
   font-size: calc(10px + 2vmin);
   height: 60px;
   justify-content: left;
   justify-content: center;
-  padding-left: 20px;
-  position: fixed;
   top: 0;
   width: calc(100vw - 250px);
-  border-bottom: 2px solid var( --secondary-bg-color);
   background-color: var(--main-bg-color);
   z-index: 2;
 }
-/** Search **/
+
+.web-search form {
+  position: relative;
+  margin-top: 50px;
+}
+
 .search-input {
   font-size: 16px;
   width: 400px;
   line-height: 30px;
+  border-radius: 50px 0 0 50px;
+  padding: 15px;
+  border: 0;
 }
 
 .search-button {
-  background: #fff;
+  background: white;
+  color: #282c34;
   border: 0;
   font-size: 16px;
   line-height: 26px;
   padding: 4px 6px;
   position: relative;
+  border-radius: 0 50px 50px 0;
+  padding: 6px 22px 9px 10px;
+  font-size: 21px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.search-button .fa-magnifying-glass {
+  color: var(--secondary-bg-color);
 }
 /* fonts */
 .lekton-regular {
@@ -84,6 +101,7 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .badge {
@@ -123,12 +141,19 @@
 .magento-badge {
   background: var(--magento-page-main-color);
 }
-
+/** Home page **/
+.page-home {
+  padding-top: 50px;
+}
 .time  {
-  color: var(--home-page-main-color);
+  color: var(--secondary-bg-color);
   font-size: 118px;
   font-weight: 700;
-  margin: 20px;
+  margin-top: 50px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-family: monospace;
 }
 
 .time-separator {

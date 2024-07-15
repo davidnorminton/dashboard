@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Header () {
+export default function Search () {
 
 
     function handleSubmit (event) {
@@ -10,7 +10,7 @@ export default function Header () {
     }
 
     return (
-        <div className="header" style={{left: '250px'}}>
+        <div className="web-search">
             <form onSubmit={handleSubmit}>
                 <input 
                     type="text" 
@@ -19,7 +19,7 @@ export default function Header () {
                     placeholder="search google" 
                 />
                 <button className="search-button" type="submit">
-                    Search
+                    <i class="fa-solid fa-magnifying-glass"></i>               
                 </button>
             </form>
 
