@@ -15,6 +15,10 @@
   margin-top: 50px;
 }
 
+.google-logo img {
+  cursor: pointer;
+}
+
 .web-search {
   display: flex;
   font-size: calc(10px + 2vmin);

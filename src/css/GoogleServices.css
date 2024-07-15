@@ -1,0 +1,53 @@
+.google-services ul {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    justify-content: center;
+}
+
+.google-services ul li {
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.google-services .google-icon {
+    display: inline-block;
+    height: 53px;
+    vertical-align: top;
+    width: 53px;
+    background-image: url(https://ssl.gstatic.com/gb/images/sprites/p_2x_eb7895ba582f.png);
+    background-size: cover;
+}
+
+.youtube {
+    background-position: 0 0;
+}
+
+.gmail {
+    background-position: 0 633px;
+}
+
+.calendar {
+    background-position: 0 56px;
+}
+
+.maps {
+    background-position: 0 1102px;
+}
+
+.translate {
+    background-position: 0 1442px;
+}
+
+.gemini {
+    background-position: 0 2190px;
+}
+
+.photos {
+    background-position: 0 1207px;
+}
