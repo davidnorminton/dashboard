@@ -9,6 +9,12 @@
 }
 
 /** Search **/
+.google-logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
 .web-search {
   display: flex;
   font-size: calc(10px + 2vmin);
@@ -19,11 +25,11 @@
   width: calc(100vw - 250px);
   background-color: var(--main-bg-color);
   z-index: 2;
+  margin-top: 15px;
 }
 
 .web-search form {
   position: relative;
-  margin-top: 50px;
 }
 
 .search-input {
@@ -31,7 +37,7 @@
   width: 400px;
   line-height: 30px;
   border-radius: 50px 0 0 50px;
-  padding: 15px;
+  padding: 15px 0 15px 25px;
   border: 0;
 }
 
@@ -142,14 +148,11 @@
   background: var(--magento-page-main-color);
 }
 /** Home page **/
-.page-home {
-  padding-top: 50px;
-}
 .time  {
   color: var(--secondary-bg-color);
   font-size: 118px;
   font-weight: 700;
-  margin-top: 50px;
+  margin-top: 15px;
   align-items: center;
   display: flex;
   justify-content: center;

@@ -1,3 +1,5 @@
+import '../css/GoogleServices.css';
+
 export default function GoogleServices () {
     return (
         <div className="google-services">
@@ -14,3 +16,4 @@ export default function GoogleServices () {
         </div>
     )
 }
+

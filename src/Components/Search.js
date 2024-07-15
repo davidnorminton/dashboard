@@ -16,7 +16,7 @@ export default function Search () {
                     type="text" 
                     name="search" 
                     className="search-input" 
-                    placeholder="search google" 
+                    placeholder="Search Google" 
                 />
                 <button className="search-button" type="submit">
                     <i class="fa-solid fa-magnifying-glass"></i>               
