@@ -4,17 +4,17 @@ import { useState, useEffect } from 'react';
 
 export default function Todo () {
 
-    const [notes, setNotes] = useState([
-        {
-            title: "red",
-            note: "dead",
-            timestamp: "1234567",
-            complete: false
-        }
-    ]);
-
+    const [notes, setNotes] = useState([]);
     const [showForm, setShowForm] = useState(false);
 
+    useEffect(() => {
+        chrome.storage.local.get(['todo']).then(function (result) {
+            if (Object.keys(result).length > 0) {
+                setNotes(result.todo)
+            }
+        });
+
+    }, []);
 
     function addNote (title, note) {
         if (!title) return;
@@ -31,15 +31,6 @@ export default function Todo () {
         setNotes(mergeList)
         updateStorage(mergeList);
     }
-
-    useEffect(() => {
-        chrome.storage.local.get(['todo']).then(function (result) {
-            if (Object.keys(result).length > 0) {
-                setNotes(result.todo)
-            }
-        });
-
-    }, []);
 
     function shouldShowForm () {
         if (showForm === true) {
@@ -67,7 +58,7 @@ export default function Todo () {
 
             return note;
         });
-        console.log(updatedNotes)
+
         setNotes(updatedNotes);
         updateStorage(updatedNotes);
     }
@@ -92,7 +83,7 @@ export default function Todo () {
 
             return note;
         });
-        console.log(adjustList)
+
         setNotes(adjustList);
         updateStorage(adjustList);
     }
@@ -125,9 +116,9 @@ export default function Todo () {
                                             <span className='delete fa-regular fa-trash-can' onClick={ () => deleteItem(note.timestamp) }></span>
                                         </div>
                                                  
-                                            <div className={'note ' + note.timestamp}>{note.note}</div>
+                                        <div className={'note ' + note.timestamp}>{note.note}</div>
                                           
-                                        </div>
+                                    </div>
                                 </li>
                             )
                         )
