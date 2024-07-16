@@ -1,4 +1,3 @@
-import { useState } from "react";
 import GoogleLogo from '../Components/GoogleLogo';
 
 export default function Search () {

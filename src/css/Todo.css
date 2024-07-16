@@ -1,3 +1,7 @@
+.page-todo {
+    display: flex;
+    justify-content: center;
+}
 .page-todo .add-todo-entry {
     background: var(--secondary-bg-color);
     border-radius: 50%;
@@ -83,4 +87,62 @@
     line-height: 38px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.page-todo .todo-list {
+    list-style: none;
+    padding: 0;
+    width: 80%;
+}
+
+.page-todo .todo-list .list-item {
+    background: #434357;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.page-todo .todo-list .list-item .title {
+    align-items: center;
+    display: flex;
+    font-size: 18px;
+    padding: 15px 10px;
+    position: relative;
+}
+
+.page-todo .todo-list .list-item .note {
+    display: none;
+    font-size: 18px;
+    padding: 15px;
+    border-top: 1px solid orange;
+    color: #a3949d;
+}
+
+.show-note {
+    position: absolute;
+    right: 50px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.check {
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+    background: white;
+}
+
+.delete {
+    position: absolute;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.complete {
+    background: #38dd38;
 }

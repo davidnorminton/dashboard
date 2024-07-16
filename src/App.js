@@ -10,6 +10,7 @@ import Sidebar from './Components/Sidebar';
 import Home from './Pages/Home';
 import Magento from './Pages/Magento';
 import Todo from './Pages/Todo';
+import About from './Pages/About';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Sidebar />
         <Routes>
           <Route path="/" element={<Home />}/> 
+          <Route path="/about" element={<About />} />
           <Route path="/magento" element={<Magento />}/> 
           <Route path="/todo" element={<Todo />} />
         </Routes>
