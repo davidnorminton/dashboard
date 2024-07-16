@@ -112,31 +112,22 @@ export default function Todo () {
                         notes.map(
                             (note) => (
                                 <li className='list-item'>
-                                    <div className='title'>
-                                    {
-                                        (note.complete) ? (
-                                            <span className='complete check' onClick={() => completeItem(note.timestamp)}></span>
-                                        ) : (
-                                            <span className='check' onClick={() => completeItem(note.timestamp)}></span>
-                                        )
-                                    }
-                                        <span>{note.title}</span>
+                                    <div className='inner'>
+                                        <div className='title' onClick={ () => showDetails(note.timestamp) }>
                                         {
-                                            (note.note) ? (
-                                                <i 
-                                                className="fa-regular fa-note-sticky show-note"
-                                                onClick={ () => showDetails(note.timestamp) }
-                                                ></i>
-
-                                            ) : ('')
+                                            (note.complete) ? (
+                                                <span className='complete check' onClick={() => completeItem(note.timestamp)}></span>
+                                            ) : (
+                                                <span className='check' onClick={() => completeItem(note.timestamp)}></span>
+                                            )
                                         }
-                                        <span className='delete fa-regular fa-trash-can' onClick={ () => deleteItem(note.timestamp) }></span>
-                                    </div>
-                                                      {
-                                            (note.note) ? (
-                                                <div className={'note ' + note.timestamp}>{note.note}</div>
-                                            ) : ('')
-                                        }
+                                            <span className={ `${(note.complete) ? 'title-complete' : ''}` }>{note.title}</span>
+                                            <span className='delete fa-regular fa-trash-can' onClick={ () => deleteItem(note.timestamp) }></span>
+                                        </div>
+                                                 
+                                            <div className={'note ' + note.timestamp}>{note.note}</div>
+                                          
+                                        </div>
                                 </li>
                             )
                         )
