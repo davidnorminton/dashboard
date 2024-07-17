@@ -33,7 +33,7 @@ export default function ListItems ({category}) {
 
         const timestamp = Date.now();
         const notesObject = {
-            title: title,
+            title: title.charAt(0).toUpperCase() + title.slice(1),
             note: note,
             timestamp: timestamp,
             complete: false,
@@ -150,7 +150,7 @@ export default function ListItems ({category}) {
                     </button>
                     <div className="add-entry-form">
                         <form  onSubmit={handleSubmit}>
-                            <input type="text" placeholder="Title" name="title" />
+                            <input type="text" placeholder="Title" name="title" autoFocus />
                             <textarea name="description" placeholder="Note ..."></textarea>
                             <button type='submit'>
                                 Add note

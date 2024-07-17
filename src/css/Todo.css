@@ -20,6 +20,11 @@
     font-size: 50px;
     margin-top: 150px;
     text-transform: uppercase;
+    text-align: center;
+}
+
+.capitalize::first-letter {
+    text-transform: uppercase;
 }
 
 .add-todo-entry {
@@ -174,6 +179,7 @@
     display: inline-flex;
     list-style: none;
     padding: none;
+    flex-wrap: wrap;
 }
 
 .category-cards ul li {
@@ -181,6 +187,8 @@
     padding: 15px;
     border-radius: 5px;
     margin: 15px;
+    position: relative;
+    min-width: 120px;
 }
 
 .category-cards ul li .title {
@@ -193,4 +201,12 @@
 .category-cards ul li .count {
     color: orange;
     font-size: 18px;
+}
+
+.category-cards .delete {
+    bottom: 10px;
+    position: absolute;
+    right: 10px;
+    color: white;
+    font-size: 20px;
 }
