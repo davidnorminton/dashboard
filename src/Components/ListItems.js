@@ -127,7 +127,7 @@ export default function ListItems ({category}) {
                             (note) => (
                                 <li className='list-item'>
                                     <div className='inner'>
-                                        <div className='title' onClick={ () => showDetails(note.timestamp) }>
+                                        <div className='check-container'>
                                         {
                                             (note.complete) ? (
                                                 <span className='complete check' onClick={() => completeItem(note.timestamp)}></span>
@@ -135,13 +135,25 @@ export default function ListItems ({category}) {
                                                 <span className='check' onClick={() => completeItem(note.timestamp)}></span>
                                             )
                                         }
-                                            <span className={ `${(note.complete) ? 'title-complete' : ''}` }>{note.title}</span>
-                                            <span className='delete fa-regular fa-trash-can' onClick={ () => deleteItem(note.timestamp) }></span>
                                         </div>
-                                                 
-                                        <div className={'note ' + note.timestamp}>{note.note}</div>
+
+                                        <div className='title' onClick={ () => showDetails(note.timestamp) }>
+
+                                            <span className={ `${(note.complete) ? 'title-complete' : ''}` }>{note.title}</span>
+                                        </div>
+                                        {
+                                            (note.note) ? (
+                                                <div className={'note ' + note.timestamp}>{note.note}</div>
+                                            ) : (
+                                                <div className={'note ' + note.timestamp + ' no-note-created'}>
+                                                    No note created
+                                                </div>
+                                            )
+                                        }
                                           
                                     </div>
+                                    <i class="fa-regular fa-pen-to-square edit-note"></i>
+                                    <span className='delete fa-regular fa-trash-can' onClick={ () => deleteItem(note.timestamp) }></span>
                                 </li>
                             )
                         )

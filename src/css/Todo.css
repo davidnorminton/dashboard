@@ -23,8 +23,8 @@
     text-align: center;
 }
 
-.capitalize::first-letter {
-    text-transform: uppercase;
+.no-note-created {
+    color: var(--main-bg-color);
 }
 
 .add-todo-entry {
@@ -126,6 +126,7 @@
     font-weight: 500;
     margin-bottom: 5px;
     border-radius: 5px;
+    position: relative;
 }
 
 .todo-list .list-item .inner {
@@ -134,11 +135,12 @@
 
 .todo-list .list-item .title {
     align-items: center;
+    cursor: pointer;
     display: flex;
     font-size: 18px;
     padding: 15px 10px;
     position: relative;
-    cursor: pointer;
+    margin-left: 20px;
 }
 
 .todo-list .list-item .note {
@@ -169,6 +171,7 @@
     right: 15px;
     font-size: 20px;
     cursor: pointer;
+    top: 15px;
 }
 
 .complete {
@@ -204,9 +207,29 @@
 }
 
 .category-cards .delete {
-    bottom: 10px;
+    cursor: pointer;
+    font-size: 20px;
     position: absolute;
-    right: 10px;
+    right: 15px;
+    bottom: 15px;
+    top: unset;
+    color: white;
+}
+
+.edit-note {
+    position: absolute;
+    top: 15px;
+    right: 50px;
     color: white;
     font-size: 20px;
+    cursor: pointer;
+}
+
+.check-container {
+    display: inline-block;
+    width: 20px;
+    height: 13px;
+    position: absolute;
+    top: 18px;
+    left: 10px;
 }
