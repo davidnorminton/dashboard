@@ -1,0 +1,7 @@
+.ip-address {
+    color: var(--secondary-bg-color);
+    font-size: 85px;
+    padding: 25px;
+    text-align: center;
+    font-weight: bold;
+}

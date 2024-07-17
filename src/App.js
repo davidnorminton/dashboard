@@ -11,7 +11,7 @@ import Home from './Pages/Home';
 import Magento from './Pages/Magento';
 import Todo from './Pages/Todo';
 import About from './Pages/About';
-
+import TodoSelected from './Pages/TodoSelected';
 
 function App() {
   return (
@@ -24,6 +24,15 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/magento" element={<Magento />}/> 
           <Route path="/todo" element={<Todo />} />
+          <Route 
+              path="/todo/:id" 
+              loader={({ params }) => {
+                console.log(params.id);
+              }}
+              // and the action
+              action={({ params }) => {}}
+              element={<TodoSelected />} 
+          />
         </Routes>
       </MemoryRouter>
       

@@ -5,4 +5,13 @@
   --magento-page-main-color: #d5175c;
   --todo-page-main-color: rgb(239, 154, 41);
   --about-page-main-color: #34a853;
+
+
+  --picker-color-red: red;
+  --picker-color-yellow: yellow;
+  --picker-color-pink: pink;
+  --picker-color-blue: blue;
+  --picker-color-orange: orange;
+  --picker-color-purple: purple;
+  --picker-color-green: green;
   }

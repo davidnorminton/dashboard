@@ -24,7 +24,7 @@ export default function Sidebar() {
                 }
                 >
                     <li className="link about-link">
-                        <span className="about-badge badge">a</span>
+                        <span className="about-badge badge">A</span>
                         <span className='text'>bout</span>
                     </li>
                 </NavLink>

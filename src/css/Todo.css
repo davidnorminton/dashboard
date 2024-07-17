@@ -1,8 +1,28 @@
 .page-todo {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
-.page-todo .add-todo-entry {
+
+.page-title {
+    color: var(--todo-page-main-color);
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 30px;
+}
+
+.no-notes {
+    color: var(--secondary-bg-color);
+    font-size: 50px;
+    margin-top: 150px;
+    text-transform: uppercase;
+}
+
+.add-todo-entry {
     background: var(--secondary-bg-color);
     border-radius: 50%;
     bottom: 15px;
@@ -42,7 +62,7 @@
     width: 600px;
 }
 
-.page-todo .close-form {
+.close-form {
     background: var(--secondary-bg-color);
     border: 0;
     border-radius: 50%;
@@ -59,25 +79,25 @@
     font-family: sans-serif;
 }
 
-.page-todo .add-entry-form {
+.add-entry-form {
     background-color: var(--todo-page-main-color);
     padding: 20px;
     border-radius: 20px;
 }
 
-.page-todo .add-entry-form input, .page-todo .add-entry-form textarea {
-    text-align: center;
+.add-entry-form input, .page-todo .add-entry-form textarea {
+    text-align: left;
     margin-bottom: 15px;
     padding: 15px;
     border-radius: 5px;
     font-size: 15px;
 }
 
-.page-todo .add-entry-form textarea {
+ .add-entry-form textarea {
     height: 200px;
 }
 
-.page-todo .add-entry-form button {
+ .add-entry-form button {
     background: #2882ef;
     color: white;
     text-transform: uppercase;
@@ -89,13 +109,13 @@
     cursor: pointer;
 }
 
-.page-todo .todo-list {
+.todo-list {
     list-style: none;
     padding: 0;
     width: 80%;
 }
 
-.page-todo .todo-list .list-item {
+.todo-list .list-item {
     background: #434357;
     color: white;
     font-weight: 500;
@@ -103,11 +123,11 @@
     border-radius: 5px;
 }
 
-.page-todo .todo-list .list-item .inner {
+.todo-list .list-item .inner {
     padding: 0 5px;
 }
 
-.page-todo .todo-list .list-item .title {
+.todo-list .list-item .title {
     align-items: center;
     display: flex;
     font-size: 18px;
@@ -116,7 +136,7 @@
     cursor: pointer;
 }
 
-.page-todo .todo-list .list-item .note {
+.todo-list .list-item .note {
     display: none;
     font-size: 18px;
     padding: 15px;
@@ -148,4 +168,29 @@
 
 .complete {
     background: #38dd38;
+}
+
+.category-cards ul {
+    display: inline-flex;
+    list-style: none;
+    padding: none;
+}
+
+.category-cards ul li {
+    background-color: var(--secondary-bg-color);
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px;
+}
+
+.category-cards ul li .title {
+    color: #fff;
+    font-size: 22px;
+    text-transform: uppercase;
+    line-height: 44px;
+}
+
+.category-cards ul li .count {
+    color: orange;
+    font-size: 18px;
 }
