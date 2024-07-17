@@ -5,7 +5,9 @@ export default function ListItems ({category}) {
 
     const [allNotes, setAllNotes] = useState([]);
     const [notes, setNotes] = useState([]);
-    const [showForm, setShowForm] = useState(false);
+    const [showForm, setShowForm] = useState(false);    
+    const [showEditForm, setShowEditForm] = useState(false);
+    const [currentEditForm, setCurrentEditForm] = useState({});
 
     useEffect(() => {
         chrome.storage.local.get(['todo']).then(function (result) {
@@ -46,6 +48,27 @@ export default function ListItems ({category}) {
         updateStorage(allNotes);
     }
 
+    function updateNote (title, note) {
+        if (!title) return;
+
+        const notesObject = {
+            title: title.charAt(0).toUpperCase() + title.slice(1),
+            note: note,
+            timestamp: null,
+            complete: false,
+            category: null
+        }; 
+
+        const updatedNotes = notes.map( function (note) {
+
+        })
+
+        notes.push(notesObject);
+        allNotes.push(notesObject);
+        //setNotes(mergeList)
+        updateStorage(allNotes);
+    }
+
     function shouldShowForm () {
         if (showForm === true) {
             return setShowForm(false);
@@ -54,10 +77,49 @@ export default function ListItems ({category}) {
         return setShowForm(true);
     }
 
+    function shouldShowEditForm () {
+        if (showEditForm === true) {
+            return setShowEditForm(false);
+        }
+
+        return setShowEditForm(true);
+    }
+
     function handleSubmit(event) {
         event.preventDefault();
         addNote(event.target[0].value, event.target[1].value)
         setShowForm(false);
+    }
+
+    function handleEditSubmit(event) {
+
+        event.preventDefault();
+
+        const title = event.target[0].value;
+        const desc = event.target[1].value;
+        const timestamp = event.target[2].value;
+        const updatedNotes = notes.map(function (note) {
+            if (parseInt(note.timestamp) === parseInt(timestamp)) {
+                note.title = title;
+                note.note = desc;
+            }
+
+            return note;
+        });
+
+        setNotes(updatedNotes);
+        const updatedAllNotes = allNotes.map(function (note) {
+            if (note.timestamp === timestamp) {
+                note.title = title;
+                note.note = note;
+            }
+
+            return note;
+        });
+
+        setAllNotes(updatedAllNotes);
+
+        setShowEditForm(false);
     }
 
     function completeItem (timestamp) {
@@ -73,8 +135,20 @@ export default function ListItems ({category}) {
             return note;
         });
 
+        const updatedAllNotes = allNotes.map(function(note) {
+            if (note.timestamp === timestamp) {
+                if (note.complete) {
+                    note.complete = false;
+                } else {
+                    note.complete = true;
+                }
+            }
+
+            return note;
+        });
+
         setNotes(updatedNotes);
-        updateStorage(updatedNotes);
+        updateStorage(updatedAllNotes);
     }
 
     function showDetails (timestamp) {
@@ -152,7 +226,19 @@ export default function ListItems ({category}) {
                                         }
                                           
                                     </div>
-                                    <i class="fa-regular fa-pen-to-square edit-note"></i>
+                                    <i 
+                                        class="fa-regular fa-pen-to-square edit-note" 
+                                        onClick={() => {
+                                            setCurrentEditForm({
+                                                title: note.title,
+                                                note: note.note,
+                                                timestamp: note.timestamp,
+                                                complete: note.complete,
+                                                category: note.category
+                                            });
+                                            setShowEditForm(true);
+                                        }}
+                                        ></i>
                                     <span className='delete fa-regular fa-trash-can' onClick={ () => deleteItem(note.timestamp) }></span>
                                 </li>
                             )
@@ -180,6 +266,32 @@ export default function ListItems ({category}) {
                 </div>
                 ) : ''
             }
+
+            {showEditForm ? (
+                <div className='overlay' id="overlay">
+                    <button className='close-form' onClick={shouldShowEditForm}>
+                        <i className='fa fa-xmark'></i>
+                    </button>
+                    <div className="add-entry-form">
+                        <form onSubmit={handleEditSubmit}>
+                            <input 
+                                type="text" 
+                                placeholder="Title" 
+                                name="title" 
+                                autoFocus 
+                                onChange={(e) => currentEditForm.title = e.target.value}
+                                defaultValue={ currentEditForm.title } 
+                            />
+                            <textarea name="description" placeholder="Note ..." defaultValue={ currentEditForm.note }></textarea>
+                            <input type="hidden" name="timestamp" value={ currentEditForm.timestamp } />
+                            <button type='submit'>
+                                Update note
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                ) : ''
+            }   
 
             <button className="add-todo-entry" onClick={shouldShowForm}>
                 <i className='fa fa-plus'></i>
