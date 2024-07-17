@@ -110,9 +110,11 @@ export default function TodoCategories() {
                                         <div className="title">{cat.title}</div>
                                         <div className='count'>
                                             { 
-                                                ( notesCount[cat.title] === 1) 
+                                                ( notesCount[cat.title]) 
+                                                ? notesCount[cat.title] === 1
                                                     ? notesCount[cat.title] + ' item' 
                                                     : notesCount[cat.title] + ' items'
+                                                : '0 items'
                                             }
                                         </div>
                                     </Link>

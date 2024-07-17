@@ -97,8 +97,16 @@ export default function ListItems ({category}) {
             return note;
         });
 
+        const adjustMainList = allNotes.filter(function (note) {
+            if (note.timestamp === timestamp) {
+                return;
+            }
+
+            return note;
+        });
+
         setNotes(adjustList);
-        updateStorage(adjustList);
+        updateStorage(adjustMainList);
     }
 
     function updateStorage(list) {
