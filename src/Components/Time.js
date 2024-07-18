@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function Time() {
+export default function Time({ clockFontColor }) {
 
     const [hours, setHours] = useState(0);
     const [minutes, setMinutes] = useState(0);
@@ -29,7 +29,8 @@ export default function Time() {
     }, []);
 
     return (
-      <div className="time">
+      
+      <div className="time" style={{ color: clockFontColor }}>
         <span class="time-hour">{hours}</span>
         <span class="time-separator">:</span>
         <span class="time-minute">{minutes}</span>

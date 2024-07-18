@@ -178,7 +178,6 @@
 }
 /** Home page **/
 .time  {
-  color: var(--secondary-bg-color);
   font-size: 118px;
   font-weight: 700;
   margin-top: 15px;
