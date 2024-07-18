@@ -50,6 +50,17 @@ export default function Sidebar() {
                         <span className='text'>agento</span>
                     </li>
                 </NavLink>
+                <NavLink 
+                    to="/settings"
+                    className={ ( { isActive } ) => 
+                        isActive ? 'active-link' : ''
+                    }
+                >
+                        <li className="link settings-link">
+                        <span className="settings-badge badge">S</span>
+                        <span className='text'>ettings</span>
+                    </li>
+                </NavLink>
             </ul>
 
         </aside>

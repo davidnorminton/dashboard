@@ -12,6 +12,7 @@ import Magento from './Pages/Magento';
 import Todo from './Pages/Todo';
 import About from './Pages/About';
 import TodoSelected from './Pages/TodoSelected';
+import SettingsPage from './Pages/Settings/SettingsPage';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
               action={({ params }) => {}}
               element={<TodoSelected />} 
           />
+          <Route path="/settings" element={<SettingsPage />} />
         </Routes>
       </MemoryRouter>
       

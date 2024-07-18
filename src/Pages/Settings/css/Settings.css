@@ -1,0 +1,93 @@
+.page-settings {
+    color: #fff;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-settings h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: var(--settings-page-main-color);
+}
+
+.page-settings h1 {
+    text-align: c;
+    text-transform: uppercase;
+    font-size: 25px;
+    color: var(--settings-page-main-color);
+}
+
+.page-settings ul.settings-list {
+    padding: 0;
+    list-style: none;
+    background: var(--secondary-bg-color);
+    border-radius: 15px;
+}
+
+.page-settings ul li ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    width: 600px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    align-items: center;
+    border-bottom: 1px solid var(--main-bg-color);
+}
+
+.page-settings ul li ul.last-item{
+    border-bottom: unset;
+}
+
+.page-settings ul li ul li {
+    display: flex;
+    width: 300px;
+    align-items: center;
+}
+
+.page-settings ul li ul li:nth-child(2) {
+    justify-content: right;
+}
+
+.page-settings .color-select {
+    height: 30px;
+    width: 30px;
+    margin-left: 5px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.page-settings .active.color-select {
+    width: 20px;
+    height: 20px;
+}
+
+.select-option {
+    background: var(--main-bg-color);
+    border: 1px solid var(--main-bg-color);
+    color: #fff;
+    cursor: pointer;
+    font-size: 10px;
+    padding: 5px 10px;
+    text-decoration: line-through;
+    text-transform: uppercase;
+}
+
+.adjust-settings ul li ul li .select-option:first-child {
+    border-radius: 15px 0 0 15px;
+} 
+
+.adjust-settings ul li ul li .select-option:nth-child(2) {
+    border-radius:  0 15px 15px 0;
+} 
+
+.active.select-option {
+    background: #12a517;
+    color: white;
+    text-decoration: none;
+}

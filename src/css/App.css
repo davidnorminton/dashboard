@@ -166,6 +166,13 @@
   color: var(--magento-page-main-color);
 }
 
+.settings-link .text {
+  color: var( --settings-page-main-color);
+}
+
+.settings-badge {
+  background: var( --settings-page-main-color);
+}
 .magento-badge {
   background: var(--magento-page-main-color);
 }
