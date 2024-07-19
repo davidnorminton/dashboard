@@ -107,25 +107,23 @@ export default function ListItems ({category}) {
         const updatedNotes = notes.map(function(note) {
             console.log(note.timestamp, timestamp)
             if (parseInt(note.timestamp) === parseInt(timestamp)) {
-                if (note.complete) {
-                    console.log('should not complete')
 
-                    note.complete = false;
+                var temp = Object.assign({}, note);
+                if (temp.complete === true) {
+                    temp.complete = false;
                 } else {
-                    console.log('should complete')
-
-                    note.complete = true;
+                    temp.complete = true
                 }
+
+                return temp;
             }
-            console.log(note)
+
             return note;
         });
-        console.log('after map')
-        console.log(updatedNotes)
 
         const updatedAllNotes = allNotes.map(function(note) {
             if (note.timestamp === timestamp) {
-                if (note.complete) {
+                if (note.complete == true) {
                     note.complete = false;
                 } else {
                     note.complete = true;
@@ -134,8 +132,7 @@ export default function ListItems ({category}) {
 
             return note;
         });
-        console.log('completeItem')
-        console.log(updatedAllNotes)
+
         setNotes(updatedNotes);
         updateStorage(updatedAllNotes);
     }
