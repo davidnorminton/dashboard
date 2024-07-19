@@ -22,13 +22,10 @@ export default function Home() {
               if (Object.keys(result).length > 0) {  
                   Object.keys(result).forEach(function (key, index) {
                       const state = key.replace('setting_', '');
-                      console.log(state, result[key])
-
                       updateState(state, result[key]);
                   });
               }
           });
-          console.log('home font color', clockFontColor)
     }, [])
 
     function updateState(setting, value) {

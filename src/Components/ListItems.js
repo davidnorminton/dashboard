@@ -48,27 +48,6 @@ export default function ListItems ({category}) {
         updateStorage(allNotes);
     }
 
-    function updateNote (title, note) {
-        if (!title) return;
-
-        const notesObject = {
-            title: title.charAt(0).toUpperCase() + title.slice(1),
-            note: note,
-            timestamp: null,
-            complete: false,
-            category: null
-        }; 
-
-        const updatedNotes = notes.map( function (note) {
-
-        })
-
-        notes.push(notesObject);
-        allNotes.push(notesObject);
-        //setNotes(mergeList)
-        updateStorage(allNotes);
-    }
-
     function shouldShowForm () {
         if (showForm === true) {
             return setShowForm(false);
@@ -124,16 +103,23 @@ export default function ListItems ({category}) {
 
     function completeItem (timestamp) {
         const updatedNotes = notes.map(function(note) {
-            if (note.timestamp === timestamp) {
+            console.log(note.timestamp, timestamp)
+            if (parseInt(note.timestamp) === parseInt(timestamp)) {
                 if (note.complete) {
+                    console.log('should not complete')
+
                     note.complete = false;
                 } else {
+                    console.log('should complete')
+
                     note.complete = true;
                 }
             }
-
+            console.log(note)
             return note;
         });
+        console.log('after map')
+        console.log(updatedNotes)
 
         const updatedAllNotes = allNotes.map(function(note) {
             if (note.timestamp === timestamp) {
@@ -146,7 +132,8 @@ export default function ListItems ({category}) {
 
             return note;
         });
-
+        console.log('completeItem')
+        console.log(updatedAllNotes)
         setNotes(updatedNotes);
         updateStorage(updatedAllNotes);
     }

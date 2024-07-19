@@ -15,6 +15,7 @@ export default function IpAddress() {
 
     return (
         <div className="ip-address">
+            <h2>Remote IP address</h2>
             <span>{ip}</span>
         </div>
     )

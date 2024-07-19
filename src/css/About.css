@@ -1,7 +1,20 @@
+.page-about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .ip-address {
+    width: 600px;
     color: var(--secondary-bg-color);
     font-size: 85px;
     padding: 25px;
-    text-align: center;
+    text-align: left;
     font-weight: bold;
+}
+
+.ip-address h2 {
+    font-size: 18px;
+    color: white;
 }

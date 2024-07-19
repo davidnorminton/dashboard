@@ -1,0 +1,5 @@
+.page-magento h1 {
+    color: var(--secondary-bg-color);
+    font-size: 30px;
+    text-align: center;
+}

@@ -1,6 +1,8 @@
+/* global chrome */
 import { NavLink } from 'react-router-dom';
 
-export default function Sidebar() {
+export default function Sidebar({enableMagento}) {
+
     return (
         <aside className="side-bar lekton-regular">
 
@@ -39,17 +41,22 @@ export default function Sidebar() {
                         <span className='text'>odo</span>
                     </li>
                 </NavLink>
-                <NavLink 
-                    to="/magento"
-                    className={ ( { isActive } ) => 
-                        isActive ? 'active-link' : ''
-                    }
-                >
-                        <li className="link magento-link">
-                        <span className="magento-badge badge">M</span>
-                        <span className='text'>agento</span>
-                    </li>
-                </NavLink>
+                {
+                    (enableMagento) ? (
+                    <NavLink 
+                        to="/magento"
+                        className={ ( { isActive } ) => 
+                            isActive ? 'active-link' : 'setting-magento'
+                        }
+                    >
+                            <li className="link magento-link">
+                            <span className="magento-badge badge">M</span>
+                            <span className='text'>agento</span>
+                        </li>
+                    </NavLink>
+                    ) : ('')
+                }
+
                 <NavLink 
                     to="/settings"
                     className={ ( { isActive } ) => 

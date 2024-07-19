@@ -1,7 +1,7 @@
 /* global chrome */
 import { React, useEffect, useState } from "react";
 
-export default function PageSettings ({ settings }) {
+export default function PageSettings () {
 
     const colors = [
         "#434357",
@@ -18,7 +18,6 @@ export default function PageSettings ({ settings }) {
     const [clockFontColor, setClockFontColor] = useState("#434357");
 
 
-
     useEffect(function () {
         chrome.storage.local.get(
             [
@@ -28,9 +27,7 @@ export default function PageSettings ({ settings }) {
             ]
         ).then(function (result) {
             if (Object.keys(result).length > 0) {  
-                console.log(result) 
                 Object.keys(result).forEach(function (key, index) {
-                    console.log(key, result[key])
                     const state = key.replace('setting_', '');
                     updateState(state, result[key]);
                 });
@@ -42,7 +39,6 @@ export default function PageSettings ({ settings }) {
     function updateState(setting, value) {
         switch(setting) {
             case 'showClock':
-                console.log('show clock', value)
                 setShowClock(value);
                 break;
             case "clockPosition":
