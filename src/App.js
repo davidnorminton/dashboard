@@ -12,9 +12,9 @@ import { useEffect, useState } from 'react';
 // Pages
 import Home from './Pages/Home';
 import Magento from './Pages/Magento/Magento';
-import Todo from './Pages/Todo';
+import Todo from './Pages/Todo/Todo';
 import About from './Pages/About';
-import TodoSelected from './Pages/TodoSelected';
+import TodoSelected from './Pages/Todo/TodoSelected';
 import SettingsPage from './Pages/Settings/SettingsPage';
 
 function App() {

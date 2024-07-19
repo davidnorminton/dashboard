@@ -1,4 +1,4 @@
-import ListItems from "../Components/ListItems";
+import ListItems from './Components/ListItems';
 import { useParams } from "react-router-dom";
 
 export default function TodoSelected() {

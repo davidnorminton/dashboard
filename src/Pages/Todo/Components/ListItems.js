@@ -105,7 +105,6 @@ export default function ListItems ({category}) {
 
     function completeItem (timestamp) {
         const updatedNotes = notes.map(function(note) {
-            console.log(note.timestamp, timestamp)
             if (parseInt(note.timestamp) === parseInt(timestamp)) {
 
                 var temp = Object.assign({}, note);

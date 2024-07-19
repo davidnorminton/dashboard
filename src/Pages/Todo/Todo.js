@@ -1,6 +1,6 @@
-import '../css/Todo.css';
+import './css/Todo.css';
 
-import TodoCategories from '../Components/TodoCategories';
+import TodoCategories from './TodoCategories';
 
 export default function Todo () {
 
