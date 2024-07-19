@@ -3,7 +3,6 @@ import '../css/GoogleServices.css';
 export default function GoogleServices () {
 
     function gotoUrl(url) {
-        console.log('fire')
         window.location.href = url;
     }
 

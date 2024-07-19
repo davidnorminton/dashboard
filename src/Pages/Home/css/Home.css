@@ -1,0 +1,72 @@
+/** Home page **/
+.time  {
+    font-size: 118px;
+    font-weight: 700;
+    margin-top: 15px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-family: monospace;
+  }
+  
+  .time-separator {
+    margin: 0 5px;
+    position: relative;
+    bottom: 10px;
+  }
+
+  /** Search **/
+.google-logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  .google-logo img {
+    cursor: pointer;
+  }
+  
+  .web-search {
+    display: flex;
+    font-size: calc(10px + 2vmin);
+    height: 60px;
+    justify-content: left;
+    justify-content: center;
+    top: 0;
+    width: calc(100vw - 250px);
+    background-color: var(--main-bg-color);
+    z-index: 2;
+    margin-top: 15px;
+  }
+  
+  .web-search form {
+    position: relative;
+  }
+  
+  .search-input {
+    font-size: 16px;
+    width: 400px;
+    line-height: 30px;
+    border-radius: 50px 0 0 50px;
+    padding: 15px 0 15px 25px;
+    border: 0;
+  }
+  
+  .search-button {
+    background: white;
+    color: #282c34;
+    border: 0;
+    font-size: 16px;
+    line-height: 26px;
+    padding: 4px 6px;
+    position: relative;
+    border-radius: 0 50px 50px 0;
+    padding: 6px 22px 9px 10px;
+    font-size: 21px;
+    height: 60px;
+    cursor: pointer;
+  }
+  
+  .search-button .fa-magnifying-glass {
+    color: var(--secondary-bg-color);
+  }

@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import '../css/Sidebar.css';
 
 export default function Sidebar({enableMagento}) {
 

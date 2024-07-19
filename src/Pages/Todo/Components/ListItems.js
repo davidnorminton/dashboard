@@ -122,7 +122,7 @@ export default function ListItems ({category}) {
 
         const updatedAllNotes = allNotes.map(function(note) {
             if (note.timestamp === timestamp) {
-                if (note.complete == true) {
+                if (note.complete === true) {
                     note.complete = false;
                 } else {
                     note.complete = true;

@@ -1,5 +1,5 @@
-import IpAddress from "../Components/IpAddress";
-import '../css/About.css';
+import IpAddress from "./Components/IpAddress";
+import './css/About.css';
 
 export default function About () {
     return (

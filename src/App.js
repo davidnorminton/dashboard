@@ -10,10 +10,10 @@ import Sidebar from './Components/Sidebar';
 import { useEffect, useState } from 'react';
 
 // Pages
-import Home from './Pages/Home';
+import Home from './Pages/Home/Home';
 import Magento from './Pages/Magento/Magento';
 import Todo from './Pages/Todo/Todo';
-import About from './Pages/About';
+import About from './Pages/About/About';
 import TodoSelected from './Pages/Todo/TodoSelected';
 import SettingsPage from './Pages/Settings/SettingsPage';
 

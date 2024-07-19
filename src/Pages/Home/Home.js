@@ -1,9 +1,9 @@
 /* global chrome */
-import Time from '../Components/Time';
-import Search from '../Components/Search';
-import GoogleServices from '../Components/GoogleServices';
+import Time from './Components/Time';
+import Search from './Components/Search';
+import GoogleServices from './Components/GoogleServices';
 import { useEffect, useState } from 'react';
-
+import './css/Home.css';
 
 export default function Home() {
 
