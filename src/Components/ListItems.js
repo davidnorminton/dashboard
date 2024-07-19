@@ -19,6 +19,8 @@ export default function ListItems ({category}) {
                         if (note.category === category && typeof note === 'object') {
                             return note;
                         }
+
+                        return false;
                     });
                     
                     if (matchedNotes.length) {
@@ -28,7 +30,7 @@ export default function ListItems ({category}) {
             }
         });
 
-    }, []);
+    }, [category]);
 
     function addNote (title, note) {
         if (!title) return;
@@ -152,7 +154,7 @@ export default function ListItems ({category}) {
     function deleteItem(timestamp) {
         const adjustList = notes.filter(function (note) {
             if (note.timestamp === timestamp) {
-                return;
+                return false;
             }
 
             return note;
@@ -160,7 +162,7 @@ export default function ListItems ({category}) {
 
         const adjustMainList = allNotes.filter(function (note) {
             if (note.timestamp === timestamp) {
-                return;
+                return false;
             }
 
             return note;

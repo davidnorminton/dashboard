@@ -47,6 +47,8 @@ export default function PageSettings () {
             case "clockFontColor":
                 setClockFontColor(value);
                 break;
+            default:
+                break;
         }
     }
 

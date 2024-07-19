@@ -1,4 +1,19 @@
+/* global chrome */
+import { React } from "react";
+
+
 export default function PluginSettings({ enableMagento, setEnableMagento }) {
+
+    function setShowMagentoPlugin (value) {
+        //setEnableMagento(value);
+        const obj = {}
+        obj['setting_magento'] = value;
+        chrome.storage.local.set(obj).then(function () {
+            console.log('Updated storage')
+        });
+
+        setEnableMagento(value);
+    }
 
     return (
         <section className="page-settings-plugin">
@@ -15,7 +30,7 @@ export default function PluginSettings({ enableMagento, setEnableMagento }) {
                                     className={ 
                                         (enableMagento) ? 'active select-option' : 'select-option'
                                     } 
-                                    onClick={ () => setEnableMagento(true) }
+                                    onClick={ () => setShowMagentoPlugin(true) }
                                 > 
                                     Enable
                                 </span>
@@ -23,7 +38,7 @@ export default function PluginSettings({ enableMagento, setEnableMagento }) {
                                     className={ 
                                         (!enableMagento) ? 'active select-option' : 'select-option'
                                     } 
-                                    onClick={ () => setEnableMagento(false) }
+                                    onClick={ () => setShowMagentoPlugin(false) }
                                 > 
                                     Disable
                                 </span>

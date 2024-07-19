@@ -39,18 +39,10 @@ export default function Home() {
             case "clockFontColor":
                 setClockFontColor(value);
                 break;
+            default:
+                break;
         }
     }
-
-    function update(setting, value) {
-        updateState(setting, value);
-        const obj = {}
-        obj['setting_' + setting] = value;
-        chrome.storage.local.set(obj).then(function () {
-            console.log('Updated storage')
-        });
-    }
-
 
     return (
         <div className='page-home'>
@@ -68,7 +60,9 @@ export default function Home() {
             {
                 (showClock && clockPosition === 'bottom')
                 ? (
+
                     <Time clockFontColor={clockFontColor} />
+                    
                 ) : ('')
             }
         </div>

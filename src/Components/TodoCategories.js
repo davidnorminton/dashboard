@@ -1,15 +1,13 @@
 /* global chrome */
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import ColorPicker from './ColorPicker';
 
 
 export default function TodoCategories() {
     const [categories, setCategories] = useState([]);
 
     const [showForm, setShowForm] = useState(false);
-    const [ pickedColor, setPickedColor ] = useState('default');
-    const [notesCount, setNotesCount] = useState({})
+    const [notesCount] = useState({})
 
     useEffect(() => {
 
@@ -31,7 +29,7 @@ export default function TodoCategories() {
             }
         });
 
-    }, []);
+    }, [notesCount]);
 
     function updateStorage(list) {
         chrome.storage.local.set({"list_categories": list}).then(function() {
@@ -71,6 +69,8 @@ export default function TodoCategories() {
                         if (note.category !== title) {
                             return note;
                         }
+
+                        return false;
                     });
                     
                     if (notesListWithRemovedItems.length) {
@@ -86,7 +86,7 @@ export default function TodoCategories() {
     function deleteItem(title) {
         const adjustList = categories.filter(function (cat) {
             if (cat.title === title) {
-                return;
+                return false;
             }
 
             return cat;
