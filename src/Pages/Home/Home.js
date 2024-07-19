@@ -1,22 +1,28 @@
 /* global chrome */
-import Time from './Components/Time';
-import Search from './Components/Search';
-import GoogleServices from './Components/GoogleServices';
 import { useEffect, useState } from 'react';
+
 import './css/Home.css';
+
+import Time from './Components/Time';
+import GoogleSearch from './Components/GoogleSearch';
+import GoogleServices from './Components/GoogleServices';
+import BingSearch from './Components/BingSearch';
 
 export default function Home() {
 
     const [showClock, setShowClock] = useState(true);
     const [clockPosition, setClockPosition] = useState("top");
     const [clockFontColor, setClockFontColor] = useState("");
+    const [searchProvider, setSearchProvider] = useState("");
+
 
     useEffect(() => {
         chrome.storage.local.get(
           [
               'setting_showClock',
               'setting_clockPosition',
-              'setting_clockFontColor'
+              'setting_clockFontColor',
+              'setting_searchProvider'
           ]
           ).then(function (result) {
               if (Object.keys(result).length > 0) {  
@@ -39,6 +45,9 @@ export default function Home() {
             case "clockFontColor":
                 setClockFontColor(value);
                 break;
+            case "searchProvider":
+                setSearchProvider(value);
+                break;
             default:
                 break;
         }
@@ -53,9 +62,24 @@ export default function Home() {
                 ) : ('')
             }
 
-            <Search />
+            {
+                (searchProvider === 'google')
+                ? (
+                    <div>
+                        <GoogleSearch />
+                        <GoogleServices />
+                    </div>
+                ) : ("")
+            }
+            {
+                (searchProvider === 'bing')
+                ? (
+                    <div>
+                        <BingSearch />
+                    </div>
+                ) : ("")
+            }
 
-            <GoogleServices />
 
             {
                 (showClock && clockPosition === 'bottom')

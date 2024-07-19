@@ -1,7 +1,10 @@
 /* global chrome */
 import { React, useEffect, useState } from "react";
 
-export default function PageSettings () {
+export default function PageSettings ({
+    searchProvider,
+    setSearchProvider
+}) {
 
     const colors = [
         "#434357",
@@ -23,7 +26,8 @@ export default function PageSettings () {
             [
                 'setting_showClock',
                 'setting_clockPosition',
-                'setting_clockFontColor'
+                'setting_clockFontColor',
+                'setting_searchProvider'
             ]
         ).then(function (result) {
             if (Object.keys(result).length > 0) {  
@@ -46,6 +50,9 @@ export default function PageSettings () {
                 break;
             case "clockFontColor":
                 setClockFontColor(value);
+                break;
+            case "searchProvider":
+                setSearchProvider(value);
                 break;
             default:
                 break;
@@ -141,6 +148,31 @@ export default function PageSettings () {
     
                                 ))}
 
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li className="settings">
+                                <span>Search Provider</span>
+                            </li>
+                            <li>
+                                <span 
+                                    className={ 
+                                        (searchProvider === "google") ? 'active select-option' : 'select-option'
+                                    } 
+                                    onClick={ () => update("searchProvider" , "google") }
+                                > 
+                                    Google
+                                </span>
+                                <span 
+                                    className={ 
+                                        (searchProvider === "bing") ? 'active select-option' : 'select-option'
+                                    } 
+                                    onClick={ () => update("searchProvider" , "bing") }
+                                > 
+                                    Bing
+                                </span>                         
                             </li>
                         </ul>
                     </li>

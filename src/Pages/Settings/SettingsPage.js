@@ -6,13 +6,17 @@ import './css/Settings.css';
 import PageSettings from './Components/PageSettings';
 import PluginSettings from './Components/PluginSettings';
 
-export default function SettingsPage ({enableMagento, setEnableMagento}) {
-
+export default function SettingsPage ({
+    enableMagento, 
+    setEnableMagento, 
+    searchProvider,
+    setSearchProvider
+}) {
     return (
         <div className='page-settings'>
             <h1>Settings</h1>
 
-            <PageSettings />
+            <PageSettings searchProvider={ searchProvider } setSearchProvider={ setSearchProvider } />
 
             <PluginSettings enableMagento={ enableMagento } setEnableMagento={ setEnableMagento } />
 

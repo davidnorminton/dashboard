@@ -19,7 +19,8 @@ import SettingsPage from './Pages/Settings/SettingsPage';
 
 function App() {
 
-    const [ enableMagento, setEnableMagento ] = useState(true) 
+    const [ enableMagento, setEnableMagento ] = useState(true);
+    const [ searchProvider, setSearchProvider  ] = useState('google')
 
 
     useEffect(function () {
@@ -61,6 +62,8 @@ function App() {
             element={<SettingsPage
             enableMagento={ enableMagento } 
             setEnableMagento={ setEnableMagento }
+            searchProvider={ searchProvider }
+            setSearchProvider={ setSearchProvider }
           />} />
         </Routes>
       </MemoryRouter>

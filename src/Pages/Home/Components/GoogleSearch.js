@@ -1,6 +1,6 @@
-import GoogleLogo from '../Components/GoogleLogo';
+import GoogleLogo from './GoogleLogo';
 
-export default function Search () {
+export default function GoogleSearch () {
 
 
     function handleSubmit (event) {
@@ -15,7 +15,9 @@ export default function Search () {
 
     return (
         <div>
+            
             <GoogleLogo />
+
             <div className="web-search">
                 <form onSubmit={handleSubmit}>
                     <input 
