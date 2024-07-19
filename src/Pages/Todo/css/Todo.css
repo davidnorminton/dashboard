@@ -218,8 +218,14 @@
 
 .edit-note {
     position: absolute;
-    top: 15px;
+    top: 0;
+    right: 0;
+}
+
+.edit-note-icon {
+    position: absolute;
     right: 50px;
+    top: 15px;
     color: white;
     font-size: 20px;
     cursor: pointer;

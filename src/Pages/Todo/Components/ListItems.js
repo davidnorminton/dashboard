@@ -1,6 +1,12 @@
 /* global chrome */
 import { useState, useEffect } from 'react';
 
+// Components
+import EditNotePopup from './EditNotePopup';
+import NotePopup from './NotePopup';
+import Item from './Item';
+import NoteOptions from './NoteOptions';
+
 export default function ListItems ({category}) {
 
     const [allNotes, setAllNotes] = useState([]);
@@ -185,46 +191,17 @@ export default function ListItems ({category}) {
                         notes.map(
                             (note) => (
                                 <li className='list-item'>
-                                    <div className='inner'>
-                                        <div className='check-container'>
-                                        {
-                                            (note.complete) ? (
-                                                <span className='complete check' onClick={() => completeItem(note.timestamp)}></span>
-                                            ) : (
-                                                <span className='check' onClick={() => completeItem(note.timestamp)}></span>
-                                            )
-                                        }
-                                        </div>
-
-                                        <div className='title' onClick={ () => showDetails(note.timestamp) }>
-
-                                            <span className={ `${(note.complete) ? 'title-complete' : ''}` }>{note.title}</span>
-                                        </div>
-                                        {
-                                            (note.note) ? (
-                                                <div className={'note ' + note.timestamp}>{note.note}</div>
-                                            ) : (
-                                                <div className={'note ' + note.timestamp + ' no-note-created'}>
-                                                    No note created
-                                                </div>
-                                            )
-                                        }
-                                          
-                                    </div>
-                                    <i 
-                                        class="fa-regular fa-pen-to-square edit-note" 
-                                        onClick={() => {
-                                            setCurrentEditForm({
-                                                title: note.title,
-                                                note: note.note,
-                                                timestamp: note.timestamp,
-                                                complete: note.complete,
-                                                category: note.category
-                                            });
-                                            setShowEditForm(true);
-                                        }}
-                                        ></i>
-                                    <span className='delete fa-regular fa-trash-can' onClick={ () => deleteItem(note.timestamp) }></span>
+                                    <Item
+                                        note={ note }
+                                        completeItem={ completeItem }
+                                        showDetails={ showDetails }
+                                    />
+                                    <NoteOptions
+                                        setCurrentEditForm={ setCurrentEditForm }
+                                        setShowEditForm={ setShowEditForm }
+                                        deleteItem={ deleteItem }
+                                        note={ note }
+                                    />
                                 </li>
                             )
                         )
@@ -235,48 +212,20 @@ export default function ListItems ({category}) {
             )}
 
             {showForm ? (
-                <div className='overlay' id="overlay">
-                    <button className='close-form' onClick={shouldShowForm}>
-                        <i className='fa fa-xmark'></i>
-                    </button>
-                    <div className="add-entry-form">
-                        <form  onSubmit={handleSubmit}>
-                            <input type="text" placeholder="Title" name="title" autoFocus />
-                            <textarea name="description" placeholder="Note ..."></textarea>
-                            <button type='submit'>
-                                Add note
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                ) : ''
-            }
+
+                <NotePopup shouldShowForm={ shouldShowForm } handleSubmit={ handleSubmit } />
+
+            ) : ''}
 
             {showEditForm ? (
-                <div className='overlay' id="overlay">
-                    <button className='close-form' onClick={shouldShowEditForm}>
-                        <i className='fa fa-xmark'></i>
-                    </button>
-                    <div className="add-entry-form">
-                        <form onSubmit={handleEditSubmit}>
-                            <input 
-                                type="text" 
-                                placeholder="Title" 
-                                name="title" 
-                                autoFocus 
-                                onChange={(e) => currentEditForm.title = e.target.value}
-                                defaultValue={ currentEditForm.title } 
-                            />
-                            <textarea name="description" placeholder="Note ..." defaultValue={ currentEditForm.note }></textarea>
-                            <input type="hidden" name="timestamp" value={ currentEditForm.timestamp } />
-                            <button type='submit'>
-                                Update note
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                ) : ''
-            }   
+
+                <EditNotePopup 
+                    shouldShowEditForm={ shouldShowEditForm }
+                    handleEditSubmit={ handleEditSubmit }
+                    currentEditForm={ currentEditForm }
+                />
+
+            ) : ''}   
 
             <button className="add-todo-entry" onClick={shouldShowForm}>
                 <i className='fa fa-plus'></i>
