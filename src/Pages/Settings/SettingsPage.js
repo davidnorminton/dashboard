@@ -10,7 +10,9 @@ export default function SettingsPage ({
     enableMagento, 
     setEnableMagento, 
     searchProvider,
-    setSearchProvider
+    setSearchProvider,
+    enableLinux,
+    setEnableLinux
 }) {
     return (
         <div className='page-settings'>
@@ -18,7 +20,12 @@ export default function SettingsPage ({
 
             <PageSettings searchProvider={ searchProvider } setSearchProvider={ setSearchProvider } />
 
-            <PluginSettings enableMagento={ enableMagento } setEnableMagento={ setEnableMagento } />
+            <PluginSettings 
+                enableMagento={ enableMagento } 
+                setEnableMagento={ setEnableMagento } 
+                enableLinux={ enableLinux }
+                setEnableLinux={ setEnableLinux }
+            />
 
         </div>
     )

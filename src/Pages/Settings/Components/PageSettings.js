@@ -106,10 +106,10 @@ export default function PageSettings ({
                             </li>
                             <li>
                             <span 
-                                    className={ 
-                                        (clockPosition === "top") ? 'active select-option' : 'select-option'
-                                    } 
-                                    onClick={ () => update("clockPosition" , "top") }
+                                className={ 
+                                    (clockPosition === "top") ? 'active select-option' : 'select-option'
+                                } 
+                                onClick={ () => update("clockPosition" , "top") }
                                 > 
                                     Top
                                 </span>

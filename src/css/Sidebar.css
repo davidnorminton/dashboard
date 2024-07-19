@@ -92,4 +92,11 @@
   .magento-badge {
     background: var(--magento-page-main-color);
   }
+
+  .linux-link {
+    color: var(--linux-page-main-color);
+  }
+  .linux-badge {
+    background: var(--linux-page-main-color);
+  }
   

@@ -2,10 +2,14 @@
 import { React } from "react";
 
 
-export default function PluginSettings({ enableMagento, setEnableMagento }) {
+export default function PluginSettings({ 
+    enableMagento, 
+    setEnableMagento,
+    enableLinux,
+    setEnableLinux
+}) {
 
     function setShowMagentoPlugin (value) {
-        //setEnableMagento(value);
         const obj = {}
         obj['setting_magento'] = value;
         chrome.storage.local.set(obj).then(function () {
@@ -13,6 +17,16 @@ export default function PluginSettings({ enableMagento, setEnableMagento }) {
         });
 
         setEnableMagento(value);
+    }
+
+    function setShowLinuxPlugin (value) {
+        const obj = {}
+        obj['setting_linux'] = value;
+        chrome.storage.local.set(obj).then(function () {
+            console.log('Updated storage')
+        });
+
+        setEnableLinux(value);
     }
 
     return (
@@ -43,7 +57,31 @@ export default function PluginSettings({ enableMagento, setEnableMagento }) {
                                     Disable
                                 </span>
                             </li>
-                        </ul>                    
+                        </ul>         
+
+                        <ul>
+                            <li className="settings">
+                                <span>Linux</span>
+                            </li>
+                            <li>
+                                <span 
+                                    className={ 
+                                        (enableLinux) ? 'active select-option' : 'select-option'
+                                    } 
+                                    onClick={ () => setShowLinuxPlugin(true) }
+                                > 
+                                    Enable
+                                </span>
+                                <span 
+                                    className={ 
+                                        (!enableLinux) ? 'active select-option' : 'select-option'
+                                    } 
+                                    onClick={ () => setShowLinuxPlugin(false) }
+                                > 
+                                    Disable
+                                </span>
+                            </li>
+                        </ul>                 
                     </li>
                 </ul>
             </div>

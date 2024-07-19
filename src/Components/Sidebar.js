@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import '../css/Sidebar.css';
 
-export default function Sidebar({enableMagento}) {
+export default function Sidebar({enableMagento, enableLinux}) {
 
     return (
         <aside className="side-bar lekton-regular">
@@ -41,6 +41,21 @@ export default function Sidebar({enableMagento}) {
                         <span className='text'>odo</span>
                     </li>
                 </NavLink>
+                {
+                    (enableLinux) ? (
+                    <NavLink 
+                        to="/linux"
+                        className={ ( { isActive } ) => 
+                            isActive ? 'active-link' : 'setting-linux'
+                        }
+                    >
+                            <li className="link linux-link">
+                            <span className="linux-badge badge">L</span>
+                            <span className='text'>inux</span>
+                        </li>
+                    </NavLink>
+                    ) : (<div>{enableLinux}</div>)
+                }
                 {
                     (enableMagento) ? (
                     <NavLink 

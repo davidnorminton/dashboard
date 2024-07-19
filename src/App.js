@@ -11,27 +11,44 @@ import { useEffect, useState } from 'react';
 
 // Pages
 import Home from './Pages/Home/Home';
-import Magento from './Pages/Magento/Magento';
 import Todo from './Pages/Todo/Todo';
 import About from './Pages/About/About';
 import TodoSelected from './Pages/Todo/TodoSelected';
 import SettingsPage from './Pages/Settings/SettingsPage';
 
+// Plugins
+import Magento from './Pages/Magento/Magento';
+import Linux from './Pages/Linux/Linux';
+
 function App() {
 
     const [ enableMagento, setEnableMagento ] = useState(true);
-    const [ searchProvider, setSearchProvider  ] = useState('google')
+    const [ enableLinux, setEnableLinux ] = useState(true);
+    const [ searchProvider, setSearchProvider  ] = useState('google');
 
 
     useEffect(function () {
       chrome.storage.local.get(
           [
-              'setting_magento'
+              'setting_magento',
+              'setting_linux'
           ]
       ).then(function (result) {
           if (Object.keys(result).length > 0) {  
-              setEnableMagento(result.setting_magento);
+              Object.keys(result).forEach(function (key) {
+                switch(key) {
+                  case 'setting_magento':
+                    setEnableMagento(result.setting_magento);
+                    break;
+                  case 'setting_linux':
+                    setEnableLinux(result.setting_linux);
+                    break;
+                  default:
+                    break;
+                }
+            })
           }
+          console.log(enableLinux)
       });
 
   }, []);
@@ -42,11 +59,11 @@ function App() {
       <MemoryRouter>
         <Sidebar 
           enableMagento={ enableMagento }
+          enableLinux={ enableLinux }
         />
         <Routes>
           <Route path="/" element={<Home />}/> 
           <Route path="/about" element={<About />} />
-          <Route path="/magento" element={<Magento />}/> 
           <Route path="/todo" element={<Todo />} />
           <Route 
               path="/todo/:id" 
@@ -57,6 +74,10 @@ function App() {
               action={({ params }) => {}}
               element={<TodoSelected />} 
           />
+
+          <Route path="/linux" element={<Linux />}/> 
+          <Route path="/magento" element={<Magento />}/> 
+
           <Route 
             path="/settings" 
             element={<SettingsPage
@@ -64,6 +85,8 @@ function App() {
             setEnableMagento={ setEnableMagento }
             searchProvider={ searchProvider }
             setSearchProvider={ setSearchProvider }
+            enableLinux={ enableLinux }
+            setEnableLinux={ setEnableLinux }
           />} />
         </Routes>
       </MemoryRouter>
