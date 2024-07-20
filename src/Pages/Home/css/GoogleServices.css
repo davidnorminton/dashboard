@@ -25,7 +25,7 @@
 }
 
 .youtube {
-    background-position: 0 0;
+    background-position: 0 4px;
 }
 
 .gmail {
@@ -37,17 +37,17 @@
 }
 
 .maps {
-    background-position: 0 1102px;
+    background-position: 0 1100px;
 }
 
 .translate {
-    background-position: 0 1442px;
+    background-position: 0 1450px;
 }
 
 .gemini {
-    background-position: 0 2190px;
+    background-position: 0 2202px;
 }
 
 .photos {
-    background-position: 0 1207px;
+    background-position: 0 1215px;
 }
