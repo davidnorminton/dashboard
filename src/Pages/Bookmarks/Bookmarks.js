@@ -91,7 +91,7 @@ export default function Bookmarks () {
                             (sections) => (
                                 <section>
                                     { /** Section title */ }
-                                    <SectionTitle title={ section.title } hideFolderContents={ hideFolderContents } />
+                                    <SectionTitle title={ sections.title } hideFolderContents={ hideFolderContents } />
 
                                     { /** unsorted bookmark */ }
                                     <UnsortedSection sections={ sections } hideFolderContents={ hideFolderContents } />
