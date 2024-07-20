@@ -1,0 +1,12 @@
+.page-linux {
+    position: relative;
+}
+.page-linux .linux-items {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 150px;
+    background: white;
+    color: black;
+}

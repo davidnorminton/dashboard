@@ -4,7 +4,7 @@ import '../css/Sidebar.css';
 export default function Sidebar({enableMagento, enableLinux}) {
 
     return (
-        <aside className="side-bar lekton-regular">
+        <aside className="side-bar">
 
             <ul>
                 <NavLink 
@@ -13,9 +13,8 @@ export default function Sidebar({enableMagento, enableLinux}) {
                         isActive ? 'active-link' : ''
                     }
                 >
-                    <li className="link home-link">
-                        <span className="home-badge badge">H</span>
-                        <span className='text'>ome</span>
+                    <li className="link">
+                        Home
                     </li>
 
                 </NavLink>
@@ -26,8 +25,7 @@ export default function Sidebar({enableMagento, enableLinux}) {
                 }
                 >
                     <li className="link about-link">
-                        <span className="about-badge badge">A</span>
-                        <span className='text'>bout</span>
+                        About
                     </li>
                 </NavLink>
                 <NavLink 
@@ -37,8 +35,17 @@ export default function Sidebar({enableMagento, enableLinux}) {
                 }
                 >
                     <li className="link todo-link">
-                        <span className="todo-badge badge">T</span>
-                        <span className='text'>odo</span>
+                        Todo
+                    </li>
+                </NavLink>
+                <NavLink 
+                    to="/bookmarks"
+                    className={ ( { isActive } ) => 
+                    isActive ? 'active-link' : ''
+                }
+                >
+                    <li className="link todo-link">
+                        Bookmarks
                     </li>
                 </NavLink>
                 {
@@ -49,9 +56,8 @@ export default function Sidebar({enableMagento, enableLinux}) {
                             isActive ? 'active-link' : 'setting-linux'
                         }
                     >
-                            <li className="link linux-link">
-                            <span className="linux-badge badge">L</span>
-                            <span className='text'>inux</span>
+                        <li className="link linux-link">
+                            Linux
                         </li>
                     </NavLink>
                     ) : (<div>{enableLinux}</div>)
@@ -64,9 +70,8 @@ export default function Sidebar({enableMagento, enableLinux}) {
                             isActive ? 'active-link' : 'setting-magento'
                         }
                     >
-                            <li className="link magento-link">
-                            <span className="magento-badge badge">M</span>
-                            <span className='text'>agento</span>
+                        <li className="link magento-link">
+                            Magento
                         </li>
                     </NavLink>
                     ) : ('')
@@ -78,9 +83,8 @@ export default function Sidebar({enableMagento, enableLinux}) {
                         isActive ? 'active-link' : ''
                     }
                 >
-                        <li className="link settings-link">
-                        <span className="settings-badge badge">S</span>
-                        <span className='text'>ettings</span>
+                    <li className="link settings-link">
+                        Setting
                     </li>
                 </NavLink>
             </ul>

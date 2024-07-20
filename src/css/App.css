@@ -7,22 +7,3 @@
   min-height: 100vh;
   padding-left: 225px;
 }
-
-/* fonts */
-.lekton-regular {
-  font-family: "Lekton", monospace;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.lekton-bold {
-  font-family: "Lekton", monospace;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.lekton-regular-italic {
-  font-family: "Lekton", monospace;
-  font-weight: 400;
-  font-style: italic;
-}

@@ -14,6 +14,7 @@ import Home from './Pages/Home/Home';
 import Todo from './Pages/Todo/Todo';
 import About from './Pages/About/About';
 import TodoSelected from './Pages/Todo/TodoSelected';
+import Bookmarks from './Pages/Bookmarks/Bookmarks';
 import SettingsPage from './Pages/Settings/SettingsPage';
 
 // Plugins
@@ -75,6 +76,7 @@ function App() {
               element={<TodoSelected />} 
           />
 
+          <Route path="/bookmarks" element={<Bookmarks />}/> 
           <Route path="/linux" element={<Linux />}/> 
           <Route path="/magento" element={<Magento />}/> 
 

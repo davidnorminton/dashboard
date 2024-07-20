@@ -1,12 +1,12 @@
 /** Side bar **/
 .side-bar {
-    background-color: var(--secondary-bg-color);
     position: fixed;
     top: 0;
     left: 0;
     width: 220px;
     height: 100vh;
     box-sizing: border-box;
+    padding-top: 5px;
   }
   
   .side-bar ul {
@@ -21,7 +21,8 @@
   }
   
   .side-bar ul a.active-link {
-    background-color: var(--main-bg-color);
+    background-color: var(--secondary-bg-color);
+    border-radius: 0 25px 25px 0;
   }
   
   .side-bar ul li {
@@ -29,74 +30,13 @@
     position: relative;
   }
   
-  .side-bar .link .text {
+  .side-bar .link {
     font-size: 18px;
-    margin: 20px 0;
-    text-transform: uppercase;
     letter-spacing: 2px;
     text-decoration: none;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  
-  .badge {
-    color: #000;
-    font-size: 32px;
-    left: 8px;
-    top: 0px;
-    position: absolute;
-    width: 35px;
-    display: flex;
-    height: 35px;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 30px;
     text-transform: uppercase;
-  }
-  
-  .todo-link .text {
-    color: var(--todo-page-main-color);
-  }
-  
-  .todo-badge {
-    background: var(--todo-page-main-color);
-  }
-  
-  .about-link .text {
-    color: var(--about-page-main-color);
-  }
-  
-  .about-badge {
-    background: var(--about-page-main-color);
-  }
-  
-  .home-link .text {
-    color: var(--home-page-main-color);
-  }
-  
-  .home-badge {
-    background: var(--home-page-main-color);
-  }
-  
-  .magento-link .text {
-    color: var(--magento-page-main-color);
-  }
-  
-  .settings-link .text {
-    color: var( --settings-page-main-color);
-  }
-  
-  .settings-badge {
-    background: var( --settings-page-main-color);
-  }
-  .magento-badge {
-    background: var(--magento-page-main-color);
+    color: white;
+    font-family: sans-serif;
   }
 
-  .linux-link {
-    color: var(--linux-page-main-color);
-  }
-  .linux-badge {
-    background: var(--linux-page-main-color);
-  }
   

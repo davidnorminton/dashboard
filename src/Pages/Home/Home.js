@@ -63,7 +63,7 @@ export default function Home() {
             }
 
             {
-                (searchProvider === 'google')
+                (searchProvider === 'google' || !(searchProvider.length))
                 ? (
                     <div>
                         <GoogleSearch />
