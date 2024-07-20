@@ -61,6 +61,18 @@ export default function Bookmarks () {
         return favIconUrl
     }
 
+    function hideFolderContents(folder) {
+        console.log(folder)
+        console.log(typeof folder)
+        const contents = document.getElementsByClassName(folder);
+        if (contents) {
+            if (contents[0].classList.contains('hide')) {
+                contents[0].classList.remove('hide')
+            } else {
+                contents[0].classList.add('hide')
+            }
+        }
+    }
 
     return (
         <div className='page-bookmarks'>
@@ -76,11 +88,11 @@ export default function Bookmarks () {
                                     {
                                         (sections.unsorted.length > 0) ? (
                                             <div>
-                                                <h3>
+                                                <h3 onClick={ () => hideFolderContents(sections.title.replace(' ', '-') + '-unsorted-list') }> 
                                                     <i class="fa-regular fa-folder bookmark-folder-icon"></i>
                                                     <span>Unsorted</span>
                                                 </h3>
-                                                <ul className='bookmarks-list'>
+                                                <ul className={ sections.title.replace(' ', '-') + '-unsorted-list bookmarks-list'}>
                                                     {
                                                         sections.unsorted.map(
                                                             (folder) => (
@@ -100,7 +112,8 @@ export default function Bookmarks () {
                                                                                     { folder.title }
                                                                                 </span>
                                                                             )
-                                                                        }                                                                        </span>
+                                                                        }                                                                        
+                                                                        </span>
                                                                     </a>
                                                                 </li>
                                                             )
@@ -120,14 +133,14 @@ export default function Bookmarks () {
                                                 sections.folders.map(
                                                     (folder) => (
                                                         <div>
-                                                            <h3>
+                                                            <h3 onClick={ () => hideFolderContents(sections.title.replace(' ', '-') + '_' + folder.title.replace(' ', '-') + '-list') }>
                                                                 <i class="fa-regular fa-folder bookmark-folder-icon"></i>
                                                                 <span>{ folder.title }</span>
                                                             </h3>
                                                             {
                                                             (folder.bookmarks) 
                                                                 ? (
-                                                                    <ul className='bookmarks-list'>
+                                                                    <ul className={ sections.title.replace(' ', '-') + '_' + folder.title.replace(' ', '-') + '-list bookmarks-list' }>
                                                                     {
                                                                         folder.bookmarks.map(
                                                                             (folder) => (
