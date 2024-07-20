@@ -7,7 +7,9 @@
     display: flex;
     justify-content: center;
     font-family: monospace;
-    color: var(--secondary-bg-color)
+    color: var(--secondary-bg-color);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #191921;
   }
   
   .time-separator {

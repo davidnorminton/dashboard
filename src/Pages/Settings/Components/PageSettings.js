@@ -38,7 +38,7 @@ export default function PageSettings ({
             }
         });
 
-    }, [updateState]);
+    }, []);
 
     function updateState(setting, value) {
         switch(setting) {

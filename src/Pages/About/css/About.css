@@ -14,6 +14,11 @@
     font-weight: bold;
 }
 
+.ip-address span {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #191921;
+}
+
 .ip-address h2 {
     font-size: 18px;
     color: white;

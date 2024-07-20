@@ -1,7 +1,7 @@
 import Nav from "./Components/Navigation/Nav";
 import './css/LinuxNav.css';
 
-export default function Linux ({}) {
+export default function Linux () {
     return (
         <div className="page-linux">
 

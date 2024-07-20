@@ -77,6 +77,16 @@ function App() {
           />
 
           <Route path="/bookmarks" element={<Bookmarks />}/> 
+          <Route 
+              path="/bookmarks/:id" 
+              loader={({ params }) => {
+                console.log(params.id);
+              }}
+              // and the action
+              action={({ params }) => {}}
+              element={<Bookmarks />} 
+          />
+
           <Route path="/linux" element={<Linux />}/> 
           <Route path="/magento" element={<Magento />}/> 
 
