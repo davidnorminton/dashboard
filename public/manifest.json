@@ -3,7 +3,11 @@
   "version": "1.0",
   "manifest_version": 3,
   "description": "A Chrome new tab extension using React Router",
-  "permissions": ["storage", "bookmarks"],
+  "permissions": [
+    "storage", 
+    "bookmarks",
+    "favicon"
+  ],
   "chrome_url_overrides": {
     "newtab": "index.html"
   }
