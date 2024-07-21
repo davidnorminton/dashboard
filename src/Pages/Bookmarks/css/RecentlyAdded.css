@@ -1,0 +1,43 @@
+.recently-added {
+    padding: 15px;
+}
+
+.recently-added h2 {
+    border-bottom: 1px solid silver;
+    color: silver;
+    display: inline-flex;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+}
+
+.recently-added ul {
+    padding: 0;
+    list-style: none;
+}
+
+.recently-added ul li {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    padding: 5px 0;
+}
+
+.recently-added ul li:hover {
+    background: var(--secondary-bg-color);
+}
+
+.recently-added ul li a {
+    color: #fff;
+    display: flex;
+    font-size: 14px;
+    width: 100%;
+}
+
+.recently-added ul li a img.favicon {
+    height: 18px;
+    margin-right: 10px;
+    width: 18px;
+}

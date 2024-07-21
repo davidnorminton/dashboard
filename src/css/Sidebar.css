@@ -20,23 +20,45 @@
     padding: 7px;
   }
   
-  .side-bar ul a.active-link {
+  .side-bar ul a.active-link,  .side-bar ul a.active-link:hover {
+    background-color: var(--selected-color);
+    border-radius: 0 25px 25px 0;
+  }
+
+  .side-bar ul a.active-link li {
+    color: var(--main-bg-color);
+    font-weight: 600;
+  }
+
+  .side-bar ul a.active-link li i.menu-icon {
+    color: var(--main-bg-color);
+  }
+
+  .side-bar ul a:hover {
     background-color: var(--secondary-bg-color);
     border-radius: 0 25px 25px 0;
   }
-  
+
   .side-bar ul li {
-    padding: 5px 0 5px 50px;
+    padding: 5px 0 5px 20px;
     position: relative;
   }
   
   .side-bar .link {
-    font-size: 18px;
+    align-items: center;
+    color: silver;
+    display: flex;
+    font-family: sans-serif;
+    font-size: 16px;
     letter-spacing: 2px;
     text-decoration: none;
-    text-transform: uppercase;
-    color: white;
-    font-family: sans-serif;
+    font-weight: 400;
   }
 
+
+  .menu-icon {
+    color: #fff;
+    font-size: 16px;
+    margin-right: 10px;  
+  }
   

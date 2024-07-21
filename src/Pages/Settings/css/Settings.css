@@ -87,7 +87,7 @@
 } 
 
 .active.select-option {
-    background: #12a517;
-    color: white;
+    background: var(--selected-color);
+    color: var(--main-bg-color);
     text-decoration: none;
 }

@@ -7,12 +7,13 @@ import BookmarksSearch from './Components/BookmarksSearch';
 import UnsortedSection from './Components/UnsortedSection';
 import SortedSection from './Components/SortedSection';
 import SectionTitle from './Components/SectionTitle';
-
+import RecentlyViewed from './Components/RecentlyViewed';
 
 
 export default function Bookmarks () {
 
     const [ bookmarks, setBookmarks ] = useState([]);
+    const [ numberOfItemsRecentlyViewed, setNumberOfItemsRecentlyViewed ] = useState(6)
     const params = useParams();
     const query = params.id;
 
@@ -34,6 +35,11 @@ export default function Bookmarks () {
                 contents[0].classList.add('hide')
             }
         }
+    }
+
+    function getFavicon(url) {
+        const favIconUrl = `chrome-extension://${chrome.runtime.id}/_favicon/?pageUrl=${encodeURIComponent(url)}&size=16`;
+        return favIconUrl
     }
 
     function sortBookmarks(result) {
@@ -83,6 +89,9 @@ export default function Bookmarks () {
 
             {/** Bookmark search **/}
             <BookmarksSearch />
+
+            {/** Recently Viewed Bookmarks */}
+            <RecentlyViewed numberToList={ numberOfItemsRecentlyViewed } getFavicon={ getFavicon } />
 
             <div className='wrapper'>
                 {

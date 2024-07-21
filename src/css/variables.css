@@ -7,12 +7,13 @@
   --about-page-main-color: #34a853;
   --linux-page-main-color: #c980d8;
   --settings-page-main-color: silver;
+  --selected-color: #4285f4;
+  --picker-color-blue: #4285f4;
 
 
   --picker-color-red: red;
   --picker-color-yellow: yellow;
   --picker-color-pink: pink;
-  --picker-color-blue: blue;
   --picker-color-orange: orange;
   --picker-color-purple: purple;
   --picker-color-green: green;

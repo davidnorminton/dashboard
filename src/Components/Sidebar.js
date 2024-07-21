@@ -14,6 +14,7 @@ export default function Sidebar({enableMagento, enableLinux}) {
                     }
                 >
                     <li className="link">
+                        <i class="fa-solid fa-house menu-icon"></i>
                         Home
                     </li>
 
@@ -25,6 +26,7 @@ export default function Sidebar({enableMagento, enableLinux}) {
                 }
                 >
                     <li className="link about-link">
+                        <i class="fa-solid fa-inbox menu-icon"></i>
                         About
                     </li>
                 </NavLink>
@@ -35,6 +37,7 @@ export default function Sidebar({enableMagento, enableLinux}) {
                 }
                 >
                     <li className="link todo-link">
+                        <i class="fa-solid fa-list menu-icon"></i>
                         Todo
                     </li>
                 </NavLink>
@@ -45,6 +48,7 @@ export default function Sidebar({enableMagento, enableLinux}) {
                 }
                 >
                     <li className="link todo-link">
+                        <i class="fa-regular fa-bookmark menu-icon"></i>
                         Bookmarks
                     </li>
                 </NavLink>
@@ -57,6 +61,7 @@ export default function Sidebar({enableMagento, enableLinux}) {
                         }
                     >
                         <li className="link linux-link">
+                            <i class="fa-brands fa-linux menu-icon"></i>
                             Linux
                         </li>
                     </NavLink>
@@ -71,6 +76,7 @@ export default function Sidebar({enableMagento, enableLinux}) {
                         }
                     >
                         <li className="link magento-link">
+                            <i class="fa-brands fa-magento menu-icon"></i>
                             Magento
                         </li>
                     </NavLink>
@@ -84,7 +90,8 @@ export default function Sidebar({enableMagento, enableLinux}) {
                     }
                 >
                     <li className="link settings-link">
-                        Setting
+                        <i class="fa-solid fa-gear menu-icon"></i>
+                        Settings
                     </li>
                 </NavLink>
             </ul>
